@@ -16,4 +16,4 @@ Anggota 3 = Nama  : Livia Yurike Khuril Maula
             Absen : 15
             NIM   : 1841720025
            
-Tema Proyek: Sistem Penjualan berbasis web
+Tema Proyek 1: Sistem Penjualan berbasis web
