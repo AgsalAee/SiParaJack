@@ -1,9 +1,10 @@
-Sistem Infomrasi Pemesanan Konveksi Paramount Jacket Malang
-
-Minggu ke 7 :
-Fitur login : 
-Beranda :
-Profile : 
+Sistem Infomrasi Pemesanan Konveksi Paramount Jacket Malang <br>
 
 
-Akumulasi Progres : 30%
+Minggu ke 7 : <br>
+Fitur login : <br>
+Beranda : <br>
+Profile : <br>
+
+
+Akumulasi Progres : 30% <br>
