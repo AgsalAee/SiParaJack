@@ -21,18 +21,23 @@
 ### Pembuatan Web Pemesanan Konveksi Paramount Jacket Malang (hari Senin, 23 Maret 2020)
 - Mulai merancang sistem website yang akan dikerjakan
 - Menggunakan framewrok CI
-- menggunakan mysql sebagai database
+- Menggunakan mysql sebagai database
+- Menggunakan Bahasa Pemrograman php, html (css)
 
 # Fitur web yang  ditawarkan
 - Update stok
 - Pemesanan secara daring
 - akun member
 - Display menu produk
+- Kontak
+- Informasi Konveksi Paramount Jacket
 
 # Fitur web yang sudah berhasil dibuat sejauh ini
-- Login
-- Display menu
-- profile akun
+- Display Home
+- Display About
+- Display Menu (Pemesanan, Galery)
+- Display Contact
+- Maps
 
 #### Akumulasi progress: 25%
 
