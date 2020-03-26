@@ -34,5 +34,5 @@
 - Display menu
 - profile akun
 
-#### Akumulasi progress: 35%
+#### Akumulasi progress: 25%
 
