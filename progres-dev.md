@@ -41,3 +41,5 @@
 
 #### Akumulasi progress: 25%
 
+
+- Video Progress on Youtube = https://youtu.be/55OIHTOb6_Y
