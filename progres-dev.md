@@ -39,7 +39,7 @@
 - Display Contact
 - Maps
 
-#### Akumulasi progress: 25%
+#### Akumulasi progress: 35%
 
 
 - Video Progress on Youtube = https://youtu.be/55OIHTOb6_Y
