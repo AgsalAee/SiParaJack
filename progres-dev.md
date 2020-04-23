@@ -32,14 +32,18 @@
 - Kontak
 - Informasi Konveksi Paramount Jacket
 
-# Fitur web yang sudah berhasil dibuat sejauh ini
+## Fitur web yang sudah berhasil dibuat sejauh ini
 - Display Home
 - Display About
 - Display Menu (Pemesanan, Galery)
 - Display Contact
 - Maps
+- Login
+- Admin Dashboard
 
-#### Akumulasi progress: 35%
+#### Akumulasi progress: 45%
 
 
 - Video Progress on Youtube = https://youtu.be/55OIHTOb6_Y
+
+- Video Progress 2 on Google Drive = https://drive.google.com/open?id=1HY5ResHwlWA5VnrOEIi25dGqKtcMR4as
