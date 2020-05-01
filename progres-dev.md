@@ -47,3 +47,5 @@
 - Video Progress on Youtube = https://youtu.be/55OIHTOb6_Y
 
 - Video Progress 2 on Google Drive = https://drive.google.com/open?id=1HY5ResHwlWA5VnrOEIi25dGqKtcMR4as
+
+- Video Progress 3 on Youtube = Link Video : https://youtu.be/jggsszrUu1s
