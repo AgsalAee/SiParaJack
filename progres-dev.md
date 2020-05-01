@@ -41,7 +41,7 @@
 - Login
 - Admin Dashboard
 
-#### Akumulasi progress: 45%
+#### Akumulasi progress: 55%
 
 
 - Video Progress on Youtube = https://youtu.be/55OIHTOb6_Y
