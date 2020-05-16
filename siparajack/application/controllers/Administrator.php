@@ -5,6 +5,7 @@ class Administrator extends CI_Controller
     {
         parent::__construct();
         $this->load->model('mlogin');
+        $this->load->model('m_pengguna');
     }
     function index()
     {
@@ -69,5 +70,24 @@ class Administrator extends CI_Controller
         $this->session->sess_destroy();
         $url = base_url('administrator');
         redirect($url);
+    }
+
+    function register()
+    {
+        $nama = $this->input->post('nama');
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+        $password2 = $this->input->post('password2');
+        $level = '3';
+        if ($password2 <> $password) {
+            echo $this->session->set_flashdata('msg', '<label class="label label-danger">Password yang Anda Masukan Tidak Sama</label>');
+            redirect('register');
+        } else {
+            $this->m_pengguna->simpan_pengguna($nama, $username, $password, $level);
+            echo $this->session->set_flashdata('msg', '<label class="label label-success">Pengguna Berhasil ditambahkan</label>');
+            redirect('register');
+        }
+
+        # code...
     }
 }

@@ -57,13 +57,15 @@
 							</div>
 
 							<button type="submit" class="btn btn-primary">Login</button>
-
+							you don't have an account?
+							<a href="<?php echo base_url() ?>Register"><span>- Register </span></>
 						</fieldset>
 					</form>
 				</div>
 			</div>
 		</div><!-- /.col-->
 	</div><!-- /.row -->
+
 
 
 	<script src="<?php echo base_url() ?>assets/js/jquery-1.11.1.min.js"></script>
