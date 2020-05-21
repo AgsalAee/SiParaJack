@@ -37,7 +37,7 @@ class Administrator extends CI_Controller
                 $this->session->set_userdata('nama', $user_nama);
             }
             if ($xcadmin['user_level'] == '3') {
-                redirect('home');
+                redirect('home/udalogin');
                 // $this->session->set_userdata('akses', '3');
                 // $idadmin = $xcadmin['user_id'];
                 // $user_nama = $xcadmin['user_nama'];

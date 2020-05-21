@@ -25,4 +25,11 @@ class Home extends CI_Controller
         $this->load->view('Home');
         $this->load->view('templates/footer');
     }
+
+    public function udalogin()
+    {
+        $this->load->view('templates/header1');
+        $this->load->view('Home');
+        $this->load->view('templates/footer');
+    }
 }
