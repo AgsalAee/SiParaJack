@@ -1,4 +1,17 @@
-
+BLOGBUGABAGI						|
+========================================================|
+https://blogbugabagi.blogspot.com			|
+IG	: instagram.com/blogbugabagi			|
+FB	: facebook.com/bugabagiblog			|
+========================================================|
+PASSWORD : blogbugabagi.blogspot.com			|
+========================================================|
+Terima kasih :) :) 					|
+========================================================|
+::::::::::************** CREDIT *************:::::::::::|
+https://github.com/taufan2				|			
+========================================================|
+							|
 ===========---//INSTALASI SOURCE CODE\\---==============|
 							|
 -Ekstrak source code					|
@@ -9,7 +22,10 @@
  ke dalam database yang dibuat tadi			|
 -Buka browser lalu jalankan dengan menuliskan 		|
  localhost/konveksi					|
-
+							|
+Akun Admin	Akun Pemilik		Akun Penjahit	|
+user: admin	user: pemilik		user: penjahit	|
+pass: admin	pass: pemilik		pass: penjahit	|
 ========================================================|
 =============-----/////FAQ ERROR\\\\\-----==============
 

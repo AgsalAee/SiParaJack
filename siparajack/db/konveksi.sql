@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 26 Jan 2020 pada 15.54
--- Versi server: 10.1.38-MariaDB
--- Versi PHP: 7.3.2
+-- Host: localhost
+-- Waktu pembuatan: 21 Bulan Mei 2020 pada 14.09
+-- Versi server: 8.0.18
+-- Versi PHP: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `konveksi`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `pemesanan`
+--
+
+CREATE TABLE `pemesanan` (
+  `id_pemesanan` int(11) NOT NULL,
+  `nama` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `no_telp` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `alamat` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `produk` varchar(10) COLLATE utf8mb4_general_ci NOT NULL,
+  `kep_produk` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `ukuran` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `jumlah` int(50) NOT NULL,
+  `gambar` text COLLATE utf8mb4_general_ci NOT NULL,
+  `pesan` varchar(50) COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -102,17 +121,17 @@ CREATE TABLE `t_jualproduk` (
 -- Dumping data untuk tabel `t_jualproduk`
 --
 
-INSERT INTO `t_jualproduk` (`jual_nofak`, `jual_tanggal`, `jual_total`, `jual_bayar`, `jual_kembalian`, `jual_user_id`) VALUES
-('2307190001', '2019-07-23 16:55:45', 3750000, 4000000, 250000, 1),
-('2307190002', '2019-07-23 16:59:51', 7500000, 8000000, 500000, 1),
-('2407190001', '2019-07-24 16:18:01', 150000, 160000, 10000, 1),
-('2607190001', '2019-07-26 07:19:24', 150000, 165000, 15000, 1),
-('2607190002', '2019-07-26 07:20:30', 75000, 90000, 15000, 1),
-('2607190003', '2019-07-26 09:16:26', 155000, 156000, 1000, 1),
-('2607190004', '2019-07-26 09:32:29', 5760000, 6000000, 240000, 1),
-('2607190005', '2019-07-26 14:16:29', 375000, 6000000, 5625000, 1),
-('2707190001', '2019-07-27 05:20:10', 2400000, 3000000, 600000, 1),
-('2807190001', '2019-07-28 07:08:15', 175000, 200000, 25000, 1);
+INSERT INTO `t_jualproduk` (`jual_nofak`, `jual_total`, `jual_bayar`, `jual_kembalian`, `jual_user_id`) VALUES
+('2307190001', 3750000, 4000000, 250000, 1),
+('2307190002', 7500000, 8000000, 500000, 1),
+('2407190001', 150000, 160000, 10000, 1),
+('2607190001', 150000, 165000, 15000, 1),
+('2607190002', 75000, 90000, 15000, 1),
+('2607190003', 155000, 156000, 1000, 1),
+('2607190004', 5760000, 6000000, 240000, 1),
+('2607190005', 375000, 6000000, 5625000, 1),
+('2707190001', 2400000, 3000000, 600000, 1),
+('2807190001', 175000, 200000, 25000, 1);
 
 -- --------------------------------------------------------
 
@@ -407,11 +426,19 @@ CREATE TABLE `t_user` (
 INSERT INTO `t_user` (`user_id`, `user_nama`, `user_username`, `user_password`, `user_level`) VALUES
 (1, 'Muhammad Nur Huda', 'admin', '21232f297a57a5a743894a0e4a801fc3', '1'),
 (2, 'H. Ismail', 'pemilik', '58399557dae3c60e23c78606771dfa3d', '2'),
-(3, 'Penjahit', 'penjahit', '1cd787242ff674e6e5b47f93159f9564', '3');
+(3, 'Penjahit', 'penjahit', '1cd787242ff674e6e5b47f93159f9564', '3'),
+(4, 'Livia', 'admin', '202cb962ac59075b964b07152d234b70', '3'),
+(5, 'Livia', 'livia', '57dc918daf619fb0f4b84560b1d419a2', '3');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `pemesanan`
+--
+ALTER TABLE `pemesanan`
+  ADD PRIMARY KEY (`id_pemesanan`);
 
 --
 -- Indeks untuk tabel `t_belikain`
@@ -478,6 +505,12 @@ ALTER TABLE `t_user`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `pemesanan`
+--
+ALTER TABLE `pemesanan`
+  MODIFY `id_pemesanan` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT untuk tabel `t_belikain_detail`
 --
 ALTER TABLE `t_belikain_detail`
@@ -499,7 +532,7 @@ ALTER TABLE `t_rencanabaru_detail`
 -- AUTO_INCREMENT untuk tabel `t_user`
 --
 ALTER TABLE `t_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

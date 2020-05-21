@@ -1,5 +1,5 @@
 <?php
-class M_penggunaanbahan extends CI_Model
+class M_pemesananMasuk extends CI_Model
 {
 
 
@@ -16,6 +16,12 @@ class M_penggunaanbahan extends CI_Model
 	function hapus_bahan($kode)
 	{
 		$hsl = $this->db->query("DELETE FROM t_rencanabaru_detail where d_rencana_id='$kode'");
+		return $hsl;
+	}
+
+	function GetAll()
+	{
+		$hsl = $this->db->query("SELECT * FROM Pemesanan");
 		return $hsl;
 	}
 }

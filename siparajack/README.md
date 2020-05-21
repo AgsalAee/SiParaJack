@@ -1,4 +1,6 @@
-### Web Konveksi SiParaJack
+### Web Konveksi
+
+Selamat atas lulus nya Muhammad Nur Huda S.Kom \ :v /
 
 > Untuk penggunaan aplikasi tanya pemiliknya langsung.
 
@@ -13,12 +15,4 @@
 
 ```
 3. Atur kredensial database di ./applications/config/databse.php
-```
-
-```
-4. Jangan lupa ganti routes
-```
-
-```
-5. CI versi 3.1
 ```
