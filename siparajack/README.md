@@ -1,6 +1,4 @@
-### Web Konveksi
 
-Selamat atas lulus nya Muhammad Nur Huda S.Kom \ :v /
 
 > Untuk penggunaan aplikasi tanya pemiliknya langsung.
 
