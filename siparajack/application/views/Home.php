@@ -1,7 +1,8 @@
-<body>
-    <!-- mian-content -->
-    <section class="mian-content">
+<!-- <div class="container"> -->
 
+<body>
+    <?php if ($this->session->flashdata('flash-data')) : ?><?php endif; ?>
+    <section class="mian-content">
         <!-- /header-top-->
         <div class="header-top">
             <!-- /banner-info-->
@@ -22,6 +23,7 @@
         </div>
         <!-- //header-top-->
     </section>
+
     <!--//testimonials-->
     <!-- /services -->
     <section class="banner-bottom py-lg-5 py-md-5 py-3" id="services">
@@ -50,7 +52,6 @@
                 </div>
             </div>
         </div>
-        </div>
     </section>
     <!-- //services -->
     <!-- choose -->
@@ -69,6 +70,8 @@
             </div>
         </div>
     </section>
+
+
     <section class="stat_w3l py-5">
         <div class="container">
             <div class="row py-lg-5 stats-con">
@@ -95,10 +98,5 @@
             </div>
         </div>
     </section>
-    <!-- //stats -->
-    <!--/newsletter-->
-
-    <!--//newsletter-->
 </body>
-
-</html>
+<!-- </div> -->

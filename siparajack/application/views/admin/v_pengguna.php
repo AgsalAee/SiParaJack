@@ -137,7 +137,7 @@ $this->load->view('admin/templates/v_sidebar');
                                 <select name="level" class="form-control" style="width:280px;" required>
                                     <option value="1">Admin</option>
                                     <option value="2">Pemilik</option>
-                                    <option value="3">Penjahit</option>
+                                    <option value="3">pembeli</option>
                                 </select>
                             </div>
                         </div>

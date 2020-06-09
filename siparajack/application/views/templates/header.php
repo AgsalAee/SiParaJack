@@ -1,3 +1,9 @@
+<?php
+$a = $this->session->userdata('akses');
+$u = $this->session->userdata('user');
+error_reporting(0);
+ini_set('display_errors', 0);
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -49,9 +55,22 @@
 
             <li class="mr-lg-4 mr-3">
                 <a href="<?php echo base_url() ?>Contact">Contact</a></li>
-            <li class="mr-lg-4 mr-3">
-                <a href="<?php echo base_url() ?>Administrator">Login</a></li>
+            <?php
+            if ($u) {
+            ?>
+                <li class="mr-lg-4 mr-3">
+                    <a href="<?php echo base_url() ?>administrator/logout">LogOut</a></li>
+            <?php
+            } else {
+            ?>
+                <li class="mr-lg-4 mr-3">
+                    <a href="<?php echo base_url() ?>administrator">Login</a></li>
+            <?php
+            }
+            ?>
         </ul>
+
+
     </nav>
 </header>
 <!-- //header -->

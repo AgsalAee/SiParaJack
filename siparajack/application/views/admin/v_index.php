@@ -28,7 +28,7 @@
  			<div class="panel panel-default">
  				<div class="panel-heading">
 
- 					Selamat Datang, <?php if ($h == '1') { ?>Admin<?php } ?><?php if ($h == '2') { ?>Pemilik<?php } ?><?php if ($h == '3') { ?>User<?php } ?>!
+ 					Selamat Datang, <?php if ($h == '1') { ?>Admin<?php } ?><?php if ($h == '2') { ?>Pemilik<?php } ?>!
 
  					<span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span></div>
  				<div class="panel-body">

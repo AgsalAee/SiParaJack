@@ -24,21 +24,31 @@ class Pemesanan extends CI_Controller
     {
         parent::__construct();
         $this->load->library('form_validation');
+        if ($this->session->userdata('masuk') != TRUE) {
+            // belum diberi text box warning
+            $url = 'administrator';
+            redirect($url);
+        };
     }
 
     public function index()
     {
-        $this->load->view('templates/header');
-        $this->load->view('Pemesanan');
-        $this->load->view('templates/footer');
+        if ($this->session->userdata('akses') == '3' || $this->session->userdata('akses') == '1') {
+            $this->load->view('templates/header');
+            $this->load->view('Pemesanan');
+            $this->load->view('templates/footer');
+        } else {
+            echo "halaman tidak ada";
+        }
     }
 
     public function tambah_pesanan()
     {
 
-        if ($this->form_validation->run() == FALSE) {
-            $this->index();
-        } else {
+        // if ($this->form_validation->run() == FALSE) {
+        //     $this->index();
+        // } else {
+        if ($this->session->userdata('akses') == '3') {
             $id_pemesanan = $this->input->POST('id_pemesanan');
             $nama = $this->input->POST('nama');
             $no_telp = $this->input->POST('no_telp');

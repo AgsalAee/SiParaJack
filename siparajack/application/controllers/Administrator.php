@@ -6,6 +6,7 @@ class Administrator extends CI_Controller
         parent::__construct();
         $this->load->model('mlogin');
         $this->load->model('m_pengguna');
+        $this->load->library('form_validation');
     }
     function index()
     {
@@ -23,12 +24,13 @@ class Administrator extends CI_Controller
             $this->session->set_userdata('masuk', true);
             $this->session->set_userdata('user', $u);
             $xcadmin = $cadmin->row_array();
-            if ($xcadmin['user_level'] == '1')
+            if ($xcadmin['user_level'] == '1') {
                 $this->session->set_userdata('akses', '1');
-            $idadmin = $xcadmin['user_id'];
-            $user_nama = $xcadmin['user_nama'];
-            $this->session->set_userdata('idadmin', $idadmin);
-            $this->session->set_userdata('nama', $user_nama);
+                $idadmin = $xcadmin['user_id'];
+                $user_nama = $xcadmin['user_nama'];
+                $this->session->set_userdata('idadmin', $idadmin);
+                $this->session->set_userdata('nama', $user_nama);
+            }
             if ($xcadmin['user_level'] == '2') {
                 $this->session->set_userdata('akses', '2');
                 $idadmin = $xcadmin['user_id'];
@@ -37,20 +39,20 @@ class Administrator extends CI_Controller
                 $this->session->set_userdata('nama', $user_nama);
             }
             if ($xcadmin['user_level'] == '3') {
-                redirect('home/udalogin');
-                // $this->session->set_userdata('akses', '3');
-                // $idadmin = $xcadmin['user_id'];
-                // $user_nama = $xcadmin['user_nama'];
-                // $this->session->set_userdata('idadmin', $idadmin);
-                // $this->session->set_userdata('nama', $user_nama);
+                $this->session->set_userdata('akses', '3');
+                $idadmin = $xcadmin['user_id'];
+                $user_nama = $xcadmin['user_nama'];
+                $this->session->set_userdata('idadmin', $idadmin);
+                $this->session->set_userdata('nama', $user_nama);
             } //Front Office
-
-
-
         }
 
         if ($this->session->userdata('masuk') == true) {
-            redirect('administrator/berhasillogin');
+            if (($xcadmin['user_level'] == '1')  || ($xcadmin['user_level'] == '2')) {
+                redirect('administrator/berhasilLogin');
+            } elseif ($xcadmin['user_level'] == '3') {
+                redirect('administrator/berhasilLoginUser');
+            }
         } else {
             redirect('administrator/gagallogin');
         }
@@ -58,6 +60,10 @@ class Administrator extends CI_Controller
     function berhasillogin()
     {
         redirect('welcome');
+    }
+    function berhasilLoginUser()
+    {
+        redirect('home');
     }
     function gagallogin()
     {
@@ -68,8 +74,9 @@ class Administrator extends CI_Controller
     function logout()
     {
         $this->session->sess_destroy();
-        $url = base_url('administrator');
-        redirect($url);
+        redirect('home');
+        // $url = base_url('administrator');
+        // redirect($url);
     }
 
     function register()
@@ -87,7 +94,37 @@ class Administrator extends CI_Controller
             echo $this->session->set_flashdata('msg', '<label class="label label-success">Pengguna Berhasil ditambahkan</label>');
             redirect('register');
         }
-
-        # code...
     }
+
+    # code...
+    //     $username = htmlspecialchars($this->input->post('username'));
+    //     $password = md5(htmlspecialchars($this->input->post('password')));
+    //     $u = $username;
+    //     $p = $password;
+    //     $ceklogin = $this->mlogin->cekadmin($u, $p);
+
+    //     if ($ceklogin) {
+    //         foreach ($ceklogin as $row) {
+
+    //             $this->session->set_userdata('user_username', $row->u);
+    //             $this->session->set_userdata('user_level', $row->user_level);
+    //         }
+    //         if ($this->session->userdata('user_level') == 1) {
+    //             $data['user_level'] = 'admin';
+    //             redirect('administrator/berhasillogin');
+    //             redirect('welcome');
+    //         } elseif ($this->session->userdata('user_level') == 3) {
+    //             redirect('home');
+    //         }
+    //     } else {
+    //         $url = base_url('administrator');
+    //         echo $this->session->set_flashdata('msg', 'Username Atau Password Salah');
+    //         redirect($url);
+    //     }
+    // }
+    // public function logout()
+    // {
+    //     $this->session->sess_destroy();
+    //     redirect('administrator');
+    // }
 }
