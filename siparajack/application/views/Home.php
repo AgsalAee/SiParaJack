@@ -1,8 +1,7 @@
-<!-- <div class="container"> -->
-
 <body>
-    <?php if ($this->session->flashdata('flash-data')) : ?><?php endif; ?>
+    <!-- mian-content -->
     <section class="mian-content">
+
         <!-- /header-top-->
         <div class="header-top">
             <!-- /banner-info-->
@@ -23,10 +22,30 @@
         </div>
         <!-- //header-top-->
     </section>
-
     <!--//testimonials-->
     <!-- /services -->
     <section class="banner-bottom py-lg-5 py-md-5 py-3" id="services">
+        <div class="slant-1"></div>
+
+        <div class="site-section first-section" data-aos="fade">
+            <div class="container">
+                <div class="row mb-5">
+                    <?php foreach ($product as $p) : ?>
+                        <div class="media-image text-center">
+                            <img src="<?php echo base_url() . '/uploads/product' . $p->gambar ?>" alt="Image" class="img-fluid">
+                            <div class="media-image-body text-center">
+                                <h2 class="font-secondary text-uppercase"><?php echo $p->nama_produk ?></h2>
+                                <p><?php echo $p->keterangan ?></p>
+                                <?php echo anchor('Home/tambah_ke_keranjang/' . $p->id_produk, '<div class="btn btn-primary text-white px-2">Tambah Keranjang</div>') ?>
+                                <?php echo anchor('Dashboard_akhir/detail/' . $p->id_produk, '<div class="btn btn-success text-white px-2">Detail</div>') ?>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+
+
         <div class="container">
             <div class="row middle-grids pt-lg-5">
                 <div class="col-lg-3 about-in middle-grid-info text-center" style="display: block; margin: auto;">
@@ -52,6 +71,7 @@
                 </div>
             </div>
         </div>
+        </div>
     </section>
     <!-- //services -->
     <!-- choose -->
@@ -70,8 +90,6 @@
             </div>
         </div>
     </section>
-
-
     <section class="stat_w3l py-5">
         <div class="container">
             <div class="row py-lg-5 stats-con">
@@ -98,5 +116,10 @@
             </div>
         </div>
     </section>
+    <!-- //stats -->
+    <!--/newsletter-->
+
+    <!--//newsletter-->
 </body>
-<!-- </div> -->
+
+</html>

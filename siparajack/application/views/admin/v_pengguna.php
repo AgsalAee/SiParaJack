@@ -28,9 +28,8 @@ $this->load->view('admin/templates/v_sidebar');
                 <center><?php echo $this->session->flashdata('msg'); ?></center>
                 <div class="panel-heading">
 
-                    <div class="btn btn-sm btn-success" data-toggle="modal" data-target="#largeModal"><span class="fa fa-plus"></span> Tambah Pengguna</a></div>
+                    <div class="btn btn-sm btn-primary" data-toggle="modal" data-target="#largeModal"><span class="fa fa-plus"></span> Tambah Pengguna</a></div>
 
-                    <span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span>
                 </div>
                 <div class="panel-body">
                     <div class="canvas-wrapper">
@@ -45,7 +44,7 @@ $this->load->view('admin/templates/v_sidebar');
                                         <th>Username</th>
                                         <th>Password</th>
                                         <th>Hak Akses</th>
-                                        <th style="width:140px;text-align:center;">Aksi</th>
+                                        <th style="width:150px;text-align:center;">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -66,17 +65,13 @@ $this->load->view('admin/templates/v_sidebar');
                                             <td><?php echo $password; ?></td>
                                             <td><?php if ($level == '1') : ?>
                                                     <option value="1" selected>Admin</option>
-                                                <?php elseif ($level == '2') : ?>
-                                                    <option value="2" selected>Pemilik</option>
                                                 <?php else : ?>
-                                                    <option value="3" selected>Pembeli</option>
+                                                    <option value="2" selected>Pembeli</option>
                                                 <?php endif; ?>
                                             </td>
 
-
-
                                             <td style="text-align:center;">
-                                                <a class="btn btn-xs btn-warning" href="#modalEditPelanggan<?php echo $id ?>" data-toggle="modal" title="Edit">Edit</a>
+                                                <a class="btn btn-xs btn-primary" href="#modalEditPelanggan<?php echo $id ?>" data-toggle="modal" title="Edit">Edit</a>
                                                 <a class="btn btn-xs btn-danger" href="#modalHapusPelanggan<?php echo $id ?>" data-toggle="modal" title="Hapus">Hapus</a>
                                             </td>
                                         </tr>
@@ -136,8 +131,7 @@ $this->load->view('admin/templates/v_sidebar');
                             <div class="col-xs-9">
                                 <select name="level" class="form-control" style="width:280px;" required>
                                     <option value="1">Admin</option>
-                                    <option value="2">Pemilik</option>
-                                    <option value="3">pembeli</option>
+                                    <option value="3">Pembeli</option>
                                 </select>
                             </div>
                         </div>
@@ -207,16 +201,10 @@ $this->load->view('admin/templates/v_sidebar');
                                     <select name="level" class="form-control" style="width:280px;" required>
                                         <?php if ($level == '1') : ?>
                                             <option value="1" selected>Admin</option>
-                                            <option value="2">Pemilik</option>
-                                            <option value="3">Pembeli</option>
-                                        <?php elseif ($level == '2') : ?>
+                                            <option value="2">Pembeli</option>
+                                        <?php elseif ($level == '3') : ?>
                                             <option value="1">Admin</option>
-                                            <option value="2" selected>Pemilik</option>
-                                            <option value="3">Pembeli</option>
-                                        <?php else : ?>
-                                            <option value="1">Admin</option>
-                                            <option value="2">Pemilik</option>
-                                            <option value="3" selected>Pembeli</option>
+                                            <option value="2" selected>Pembeli</option>
                                         <?php endif; ?>
                                     </select>
                                 </div>

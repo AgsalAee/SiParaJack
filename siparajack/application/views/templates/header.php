@@ -1,9 +1,3 @@
-<?php
-$a = $this->session->userdata('akses');
-$u = $this->session->userdata('user');
-error_reporting(0);
-ini_set('display_errors', 0);
-?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -55,22 +49,15 @@ ini_set('display_errors', 0);
 
             <li class="mr-lg-4 mr-3">
                 <a href="<?php echo base_url() ?>Contact">Contact</a></li>
-            <?php
-            if ($u) {
-            ?>
-                <li class="mr-lg-4 mr-3">
-                    <a href="<?php echo base_url() ?>administrator/logout">LogOut</a></li>
-            <?php
-            } else {
-            ?>
-                <li class="mr-lg-4 mr-3">
-                    <a href="<?php echo base_url() ?>administrator">Login</a></li>
-            <?php
-            }
-            ?>
+
+            <li>
+                <?php $keranjang = 'Keranjang : ' . $this->cart->total_items() . ' items' ?>
+                <a><?php echo anchor('Home/detail_keranjang', $keranjang) ?></a>
+            </li>
+
+            <li class="mr-lg-4 mr-3">
+                <a href="<?php echo base_url() ?>Administrator">Login</a></li>
         </ul>
-
-
     </nav>
 </header>
 <!-- //header -->

@@ -9,10 +9,7 @@
  ke dalam database yang dibuat tadi			|
 -Buka browser lalu jalankan dengan menuliskan 		|
  localhost/konveksi					|
-							|
-Akun Admin	Akun Pemilik		Akun Penjahit	|
-user: admin	user: pemilik		user: penjahit	|
-pass: admin	pass: pemilik		pass: penjahit	|
+
 ========================================================|
 =============-----/////FAQ ERROR\\\\\-----==============
 

@@ -1,4 +1,4 @@
-
+### Web Konveksi SiParaJack
 
 > Untuk penggunaan aplikasi tanya pemiliknya langsung.
 
@@ -13,4 +13,12 @@
 
 ```
 3. Atur kredensial database di ./applications/config/databse.php
+```
+
+```
+4. Jangan lupa ganti routes
+```
+
+```
+5. CI versi 3.1
 ```
