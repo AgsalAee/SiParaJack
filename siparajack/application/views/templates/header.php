@@ -1,3 +1,9 @@
+<?php
+$a = $this->session->userdata('akses');
+$u = $this->session->userdata('user');
+error_reporting(0);
+ini_set('display_errors', 0);
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -40,6 +46,8 @@
                 <a href="#">Menu <span class="fa fa-angle-down" aria-hidden="true"></span></a>
                 <input type="checkbox" id="drop-2" />
                 <ul>
+                    <li><a href="<?php echo base_url() ?>v_Pembelian">Pembelian</a>
+                    </li>
                     <li><a href="<?php echo base_url() ?>Pemesanan">Pemesanan</a>
                     </li>
                     <li><a href="<?php echo base_url() ?>Gallery">Gallery</a>
@@ -49,15 +57,38 @@
 
             <li class="mr-lg-4 mr-3">
                 <a href="<?php echo base_url() ?>Contact">Contact</a></li>
+            <?php
+            if ($u) {
+            ?>
+                <li>
+                    <?php $keranjang = 'Keranjang : ' . $this->cart->total_items() . ' items' ?>
+                    <a><?php echo anchor('KeranjangBelanja', $keranjang) ?></a>
+                </li>
 
-            <li>
-                <?php $keranjang = 'Keranjang : ' . $this->cart->total_items() . ' items' ?>
-                <a><?php echo anchor('Home/detail_keranjang', $keranjang) ?></a>
-            </li>
+            <?php
+            } else {
+            ?>
+                <li class="mr-lg-4 mr-3">
+                <?php
+            }
+                ?>
 
-            <li class="mr-lg-4 mr-3">
-                <a href="<?php echo base_url() ?>Administrator">Login</a></li>
+                <?php
+                if ($u) {
+                ?>
+                <li class="mr-lg-4 mr-3">
+                    <a href="<?php echo base_url() ?>administrator/logout">LogOut</a></li>
+            <?php
+                } else {
+            ?>
+                <li class="mr-lg-4 mr-3">
+                    <a href="<?php echo base_url() ?>administrator">Login</a></li>
+            <?php
+                }
+            ?>
         </ul>
+
+
     </nav>
 </header>
 <!-- //header -->

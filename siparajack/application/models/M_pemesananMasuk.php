@@ -2,26 +2,45 @@
 class M_pemesananMasuk extends CI_Model
 {
 
+	private $_table = "pemesanan";
+	public $gambar = "default.jpg";
 
-	function gunakan_bahan($kode, $idkain, $jumlah, $rencanakode)
+	function get_pemesanan()
 	{
-
-		$this->db->query("UPDATE t_rencanabaru SET rencana_status='1' where rencana_kode='$rencanakode'");
-		$this->db->query("UPDATE t_rencanabaru_detail SET d_rencana_status='1' where d_rencana_id='$kode'");
-		$this->db->query("UPDATE t_kain SET kain_stok=kain_stok-'$jumlah' where kain_id='$idkain'");
-
-		return true;
+		return $this->db->get('pemesanan');
 	}
 
-	function hapus_bahan($kode)
+	function tambah_pesanan()
 	{
-		$hsl = $this->db->query("DELETE FROM t_rencanabaru_detail where d_rencana_id='$kode'");
-		return $hsl;
+		$post = $this->input->post();
+		$this->nama = $post["nama"];
+		$this->no_telp = $post["no_telp"];
+		$this->alamat = $post["alamat"];
+		$this->produk = $post["produk"];
+		$this->kep_produk = $post["kep_produk"];
+		$this->ukuran = $post["ukuran"];
+		$this->jumlah = $post["jumlah"];
+		$this->gambar = $this->_uploadImage();
+		$this->pesan = $post["pesan"];
+		$this->db->insert($this->_table, $this);
 	}
 
-	function GetAll()
+	private function _uploadImage()
 	{
-		$hsl = $this->db->query("SELECT * FROM Pemesanan");
-		return $hsl;
+		$config['upload_path']          = './upload/product/';
+		$config['allowed_types']        = 'gif|jpg|png';
+		$config['file_name']            = $this->produk_id;
+		$config['overwrite']			= true;
+		$config['max_size']             = 1024; // 1MB
+		// $config['max_width']            = 1024;
+		// $config['max_height']           = 768;
+
+		$this->load->library('upload', $config);
+
+		if ($this->upload->do_upload('gambar')) {
+			$upload_data = $this->upload->data();
+			return $upload_data["file_name"];
+		}
+		return "default.jpg";
 	}
 }
