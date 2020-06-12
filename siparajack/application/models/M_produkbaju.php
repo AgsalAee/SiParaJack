@@ -109,4 +109,15 @@ class M_produkbaju extends CI_Model
 			return array_map('unlink', glob(FCPATH . "upload/product/$filename.*"));
 		}
 	}
+	function find($id)
+	{
+		$result = $this->db->where('produk_id', $id)
+			->limit(1)
+			->get('t_produkbaju');
+		if ($result->num_rows() > 0) {
+			return $result->row();
+		} else {
+			return array();
+		}
+	}
 }

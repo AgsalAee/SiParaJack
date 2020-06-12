@@ -14,6 +14,7 @@ class KeranjangBelanja extends CI_Controller
             $url = 'administrator';
             redirect($url);
         };
+        $this->load->model('m_produkbaju');
     }
 
     public function index()
@@ -31,16 +32,16 @@ class KeranjangBelanja extends CI_Controller
     {
         $produk = $this->M_produkbaju->find($id);
         $data = array(
-            'id'      => $produk->id_produk,
+            'id'      => $produk->produk_id,
             'qty'     => 1,
-            'price'   => $produk->harga,
-            'name'    => $produk->nama_brg
+            'price'   => $produk->produk_harga,
+            'name'    => $produk->produk_nama
 
         );
 
         $this->cart->insert($data);
 
-        redirect('Dashboard_akhir');
+        redirect('pembelian');
     }
 
     public function hapus_keranjang()

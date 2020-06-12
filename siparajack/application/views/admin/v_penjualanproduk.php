@@ -11,14 +11,14 @@ $this->load->view('admin/templates/v_sidebar');
             <li><a href="#">
                     <em class="fa fa-home"></em>
                 </a></li>
-            <li class="active">Penjualan Baju</li>
+            <li class="active">Penjualan Jaket</li>
         </ol>
     </div>
     <!--/.row-->
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Penjualan Baju</h1>
+            <h1 class="page-header">Penjualan Jaket</h1>
         </div>
     </div>
     <!--/.row-->

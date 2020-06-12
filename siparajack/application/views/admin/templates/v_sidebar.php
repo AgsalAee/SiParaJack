@@ -53,16 +53,16 @@
 						<li><a class="" href="<?php echo base_url() . 'admin/warna' ?>">
 								<span class="fa fa-arrow-right">&nbsp;</span> Data Warna
 							</a></li>
-						<li><a class="" href="<?php echo base_url() . 'admin/kain' ?>">
+						<!-- <li><a class="" href="<?php echo base_url() . 'admin/kain' ?>">
 								<span class="fa fa-arrow-right">&nbsp;</span> Data Bahan Baku
-							</a></li>
+							</a></li> -->
 						<li><a class="" href="<?php echo base_url() . 'admin/produkbaju' ?>">
-								<span class="fa fa-arrow-right">&nbsp;</span> Data Produk Baju
+								<span class="fa fa-arrow-right">&nbsp;</span> Data Produk Jaket
 							</a></li>
 					</ul>
 				</li>
 				<li><a href="<?php echo base_url() . 'admin/pembeliankain' ?>"><em class="fa fa-shopping-cart">&nbsp;</em> Pembelian Bahan</a></li>
-				<li><a href="<?php echo base_url() . 'admin/penggunaanbahan' ?>"><em class="fa fa-hourglass-1">&nbsp;</em> Penggunaan Bahan</a></li>
+				<!-- <li><a href="<?php echo base_url() . 'admin/penggunaanbahan' ?>"><em class="fa fa-hourglass-1">&nbsp;</em> Penggunaan Bahan</a></li> -->
 				<li><a href="<?php echo base_url() . 'admin/PemesananMasuk' ?>"><em class="fa fa-hourglass-1">&nbsp;</em> Pemesanan Masuk</a></li>
 				<li><a href="<?php echo base_url() . 'admin/hasil' ?>"><em class="fa fa-leaf">&nbsp;</em> Hasil Produksi</a></li>
 				<!--<li><a href="<?php echo base_url() . 'admin/rencana' ?>"><em class="fa fa-bar-chart">&nbsp;</em> RPROD Lama</a></li>

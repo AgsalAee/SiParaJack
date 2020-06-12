@@ -59,7 +59,7 @@
                                                     <td><?php echo $a->produk_deskripsi ?></td>
                                                     <td><?php echo $a->produk_harga ?></td>
                                                     <td><?php echo $a->produk_stok ?></td>
-
+                                                    <td><?php echo anchor('KeranjangBelanja/tambah_ke_keranjang/' . $a->produk_id, '<div class="btn btn-primary text-white px-2">Tambah Keranjang</div>') ?></td>
                                                 </tr>
                                             <?php endforeach; ?>
                                         </tbody>
