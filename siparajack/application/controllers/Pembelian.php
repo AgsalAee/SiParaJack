@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Pemesanan extends CI_Controller
+class Pembelian extends CI_Controller
 {
 
     /**
@@ -29,18 +29,23 @@ class Pemesanan extends CI_Controller
             $url = 'administrator';
             redirect($url);
         };
-        $this->load->model('M_pemesananMasuk');
+        $this->load->model('M_produkbaju');
     }
 
     public function index()
     {
-        if ($this->session->userdata('akses') == '3' || $this->session->userdata('akses') == '1') {
+        $data['data'] = $this->M_produkbaju->get_produkbaju();
+        if ($this->session->userdata('akses') == '3') {
             $this->load->view('templates/header');
-            $this->load->view('Pemesanan');
+            $this->load->view('Pembelian', $data);
             $this->load->view('templates/footer');
         } else {
             echo "halaman tidak ada";
         }
+    }
+
+    function Get_AllPembelian()
+    {
     }
 
     // public function tambah_pesanan()
@@ -80,14 +85,4 @@ class Pemesanan extends CI_Controller
     //     }
     // }
 
-    function tambah_pesanan()
-    {
-        if ($this->session->userdata('akses') == '3' || $this->session->userdata('akses') == '1') {
-            $this->M_pemesananMasuk->tambah_pesanan();
-            echo $this->session->set_flashdata('msg', '<label class="label label-success">Pesanan Berhasil ditambahkan</label>');
-            redirect('Pemesanan');
-        } else {
-            echo "halaman tidak ditemukan";
-        }
-    }
 }

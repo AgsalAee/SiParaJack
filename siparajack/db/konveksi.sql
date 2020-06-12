@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 10 Jun 2020 pada 16.05
+-- Waktu pembuatan: 12 Jun 2020 pada 07.04
 -- Versi server: 8.0.18
 -- Versi PHP: 7.3.11
 
@@ -21,6 +21,33 @@ SET time_zone = "+00:00";
 --
 -- Database: `konveksi`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `pemesanan`
+--
+
+CREATE TABLE `pemesanan` (
+  `id_pemesanan` int(11) NOT NULL,
+  `nama` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `no_telp` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `alamat` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `produk` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `kep_produk` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `ukuran` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `jumlah` int(50) NOT NULL,
+  `gambar` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `pesan` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `pemesanan`
+--
+
+INSERT INTO `pemesanan` (`id_pemesanan`, `nama`, `no_telp`, `alamat`, `produk`, `kep_produk`, `ukuran`, `jumlah`, `gambar`, `pesan`) VALUES
+(1, 'Livia', '082228773286', 'Jl Piranha', '2', 'Pribadi', 'M', 2, 'jaket.jpg', 'Warna sesuai desain'),
+(2, 'Agsal', '082228773281', 'Dinoyo', '1', 'Pribadi', 'M', 2, 'tshirt.jpg', 'Warna sesuai desain');
 
 -- --------------------------------------------------------
 
@@ -242,24 +269,7 @@ INSERT INTO `t_kain_warna` (`warna_id`, `warna_nama`) VALUES
 ('W0004', 'Biru Muda'),
 ('W0005', 'Abu-Abu'),
 ('W0006', 'Coklat'),
-('W0007', 'Dark');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `t_produk`
---
-
-CREATE TABLE `t_produk` (
-  `id_produk` int(11) NOT NULL,
-  `nama_produk` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `keterangan` varchar(225) COLLATE utf8mb4_general_ci NOT NULL,
-  `kategori` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `harga` int(12) NOT NULL,
-  `stok` int(10) NOT NULL,
-  `gambar` text COLLATE utf8mb4_general_ci NOT NULL,
-  `warna_id` int(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+('W0007', 'Mix');
 
 -- --------------------------------------------------------
 
@@ -274,19 +284,39 @@ CREATE TABLE `t_produkbaju` (
   `produk_deskripsi` text NOT NULL,
   `produk_harga` double NOT NULL,
   `produk_stok` int(11) DEFAULT '0',
-  `gambar` varchar(255) NOT NULL,
-  `kategori` varchar(20) NOT NULL
+  `gambar` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `t_produkbaju`
 --
 
-INSERT INTO `t_produkbaju` (`produk_id`, `produk_nama`, `produk_warna`, `produk_deskripsi`, `produk_harga`, `produk_stok`, `gambar`, `kategori`) VALUES
-('BJ0001', 'Baju Tunik Rami', 'Pink', 'Baju yang dibuat dengan kain Katun, Tangan Panjang', 55000, 70, 'BJ0001.jpg', ''),
-('BJ0006', 'Baju Skuba', 'Merah', 'Baju tangan panjang dengan saku dibawah kanan', 60000, 355, 'BJ0006.jpg', ''),
-('BJ0011', 'Baju Tunik Rami Tangan Serut', 'Kuning', 'Baju yang dibuat dengan kain Katun, dengan tangan mengerucut', 65000, 55, 'BJ0011.jpg', ''),
-('BJ0012', 'Jaket ', 'Biru', 'Jaket', 55000, 0, 'default.jpg', '');
+INSERT INTO `t_produkbaju` (`produk_id`, `produk_nama`, `produk_warna`, `produk_deskripsi`, `produk_harga`, `produk_stok`, `gambar`) VALUES
+('BJ0001', 'Baju Tunik Rami', 'Pink', 'Baju yang dibuat dengan kain Katun, Tangan Panjang', 55000, 70, 'BJ0001.jpg'),
+('BJ0002', 'Baju Tunik Rami', 'Kuning', 'Baju yang dibuat dengan kain Katun, Tangan Panjang', 55000, 121, 'BJ0002.jpg'),
+('BJ0003', 'Baju Tunik Rami', 'Hijau', 'Baju yang dibuat dengan kain Katun, Tangan Panjang', 55000, 63, 'BJ0003.jpg'),
+('BJ0004', 'Baju Tunik Rami', 'Biru Muda', 'Baju yang dibuat dengan kain Katun, Tangan Panjang', 55000, 173, 'BJ0004.jpg'),
+('BJ0005', 'Baju Tunik Rami', 'Abu-Abu', 'Baju yang dibuat dengan kain Katun, Tangan Panjang', 55000, 0, 'BJ0005.jpg'),
+('BJ0006', 'Baju Skuba', 'Merah', 'Baju tangan panjang dengan saku dibawah kanan', 60000, 355, 'BJ0006.jpg'),
+('BJ0007', 'Baju Skuba', 'Kuning', 'Baju tangan panjang dengan saku dibawah kanan', 60000, 0, 'BJ0007.jpg'),
+('BJ0008', 'Baju Skuba', 'Hijau', 'Baju tangan panjang dengan saku dibawah kanan', 60000, 0, 'BJ0008.jpg'),
+('BJ0009', 'Baju Skuba', 'Biru Muda', 'Baju tangan panjang dengan saku dibawah kanan', 60000, 0, 'BJ0009.jpg'),
+('BJ0010', 'Baju Skuba', 'Abu-Abu', 'Baju tangan panjang dengan saku dibawah kanan', 60000, 0, 'BJ0010.jpg'),
+('BJ0011', 'Baju Tunik Rami Tangan Serut', 'Kuning', 'Baju yang dibuat dengan kain Katun, dengan tangan mengerucut', 65000, 55, 'BJ0011.jpg'),
+('BJ0012', 'Baju Tunik Rami Tangan Serut', 'Merah', 'Baju yang dibuat dengan kain Katun, dengan tangan mengerucut', 65000, 0, 'default.jpg'),
+('BJ0013', 'Baju Tunik Rami Tangan Serut', 'Hijau', 'Baju yang dibuat dengan kain Katun, dengan tangan mengerucut', 65000, 0, 'default.jpg'),
+('BJ0014', 'Baju Tunik Rami Tangan Serut', 'Biru Muda', 'Baju yang dibuat dengan kain Katun, dengan tangan mengerucut', 65000, 41, 'default.jpg'),
+('BJ0015', 'Baju Tunik Rami Tangan Serut', 'Abu-Abu', 'Baju yang dibuat dengan kain Katun, dengan tangan mengerucut', 65000, 0, 'default.jpg'),
+('BJ0016', 'Tunik Sabyan', 'Merah', 'Baju tunik sabyan', 50000, 0, 'default.jpg'),
+('BJ0017', 'Tunik Sabyan', 'Kuning', 'Baju tunik sabyan', 60000, 0, 'default.jpg'),
+('BJ0018', 'Tunik Sabyan', 'Hijau', 'Baju tunik sabyan', 60000, 0, 'default.jpg'),
+('BJ0019', 'Tunik Sabyan', 'Biru Muda', 'Baju tunik sabyan', 60000, 0, 'default.jpg'),
+('BJ0020', 'Tunik Sabyan', 'Abu-Abu', 'Baju tunik sabyan', 60000, 0, 'default.jpg'),
+('BJ0021', 'Katun Salur', 'Merah', 'Baju Katun salur', 65000, 0, 'default.jpg'),
+('BJ0022', 'Katun Salur', 'Kuning', 'Baju Katun salur', 65000, 0, 'default.jpg'),
+('BJ0023', 'Katun Salur', 'Hijau', 'Baju Katun salur', 65000, 0, 'default.jpg'),
+('BJ0024', 'Katun Salur', 'Biru Muda', 'Baju Katun salur', 65000, 0, 'default.jpg'),
+('BJ0025', 'Katun Salur', 'Abu-Abu', 'Baju Katun salur', 65000, 0, 'default.jpg');
 
 -- --------------------------------------------------------
 
@@ -402,14 +432,21 @@ CREATE TABLE `t_user` (
 --
 
 INSERT INTO `t_user` (`user_id`, `user_nama`, `user_username`, `user_password`, `user_level`) VALUES
-(1, 'Admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', '1'),
-(8, 'Livia Yurike', 'Livia Yurike', '42b862b75c187220eb1d516ed6e34d32', '2'),
-(9, 'Agsal Fairrohmad', 'Agsal', 'cc416e885e44f8645dfa69c4eeaad3df', '3'),
-(11, 'Alan Perdhana', 'Alan', '02558a70324e7c4f269c69825450cec8', '3');
+(1, 'Muhammad Nur Huda', 'admin', '21232f297a57a5a743894a0e4a801fc3', '1'),
+(2, 'H. Ismail', 'pemilik', '58399557dae3c60e23c78606771dfa3d', '2'),
+(3, 'Penjahit', 'penjahit', '1cd787242ff674e6e5b47f93159f9564', '3'),
+(4, 'Livia', 'admin', '202cb962ac59075b964b07152d234b70', '3'),
+(5, 'Livia', 'livia', '57dc918daf619fb0f4b84560b1d419a2', '3');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `pemesanan`
+--
+ALTER TABLE `pemesanan`
+  ADD PRIMARY KEY (`id_pemesanan`);
 
 --
 -- Indeks untuk tabel `t_belikain`
@@ -448,13 +485,6 @@ ALTER TABLE `t_kain_warna`
   ADD PRIMARY KEY (`warna_id`);
 
 --
--- Indeks untuk tabel `t_produk`
---
-ALTER TABLE `t_produk`
-  ADD PRIMARY KEY (`id_produk`),
-  ADD KEY `warna_id` (`warna_id`);
-
---
 -- Indeks untuk tabel `t_produkbaju`
 --
 ALTER TABLE `t_produkbaju`
@@ -483,6 +513,12 @@ ALTER TABLE `t_user`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `pemesanan`
+--
+ALTER TABLE `pemesanan`
+  MODIFY `id_pemesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT untuk tabel `t_belikain_detail`
 --
 ALTER TABLE `t_belikain_detail`
@@ -495,12 +531,6 @@ ALTER TABLE `t_jualproduk_detail`
   MODIFY `d_jual_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT untuk tabel `t_produk`
---
-ALTER TABLE `t_produk`
-  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT untuk tabel `t_rencanabaru_detail`
 --
 ALTER TABLE `t_rencanabaru_detail`
@@ -510,7 +540,7 @@ ALTER TABLE `t_rencanabaru_detail`
 -- AUTO_INCREMENT untuk tabel `t_user`
 --
 ALTER TABLE `t_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

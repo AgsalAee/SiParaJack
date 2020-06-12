@@ -35,7 +35,6 @@ class M_produkbaju extends CI_Model
 		$this->produk_id = $this->get_kodebaju();
 		$this->produk_nama = $post["nama"];
 		$this->produk_warna = $post["warna"];
-		$this->kategori = $post["kategori"];
 		$this->produk_deskripsi = $post["deskripsi"];
 		$this->produk_harga = $post["harga"];
 		$this->produk_stok = 0;
@@ -49,7 +48,6 @@ class M_produkbaju extends CI_Model
 		$this->produk_id = $post["id"];
 		$this->produk_nama = $post["nama"];
 		$this->produk_warna = $post["warna"];
-		$this->kategori = $post["kategori"];
 		$this->produk_deskripsi = $post["deskripsi"];
 		$this->produk_harga = $post["harga"];
 		$this->produk_stok = $post["stok"];
@@ -66,7 +64,7 @@ class M_produkbaju extends CI_Model
 	function update_produkbaju($kodebaju, $nama, $warna, $deskripsi, $harga, $stok)
 	{
 		$user_id = $this->session->userdata('idadmin');
-		$hsl = $this->db->query("UPDATE t_produkbaju SET produk_nama='$nama',produk_warna='$warna',kategori='$kategori',produk_deskripsi='$deskripsi',produk_harga='$harga',produk_stok='$stok' WHERE produk_id='$kodebaju'");
+		$hsl = $this->db->query("UPDATE t_produkbaju SET produk_nama='$nama',produk_warna='$warna',produk_deskripsi='$deskripsi',produk_harga='$harga',produk_stok='$stok' WHERE produk_id='$kodebaju'");
 		return $hsl;
 	}
 
@@ -88,7 +86,7 @@ class M_produkbaju extends CI_Model
 		$config['allowed_types']        = 'gif|jpg|png';
 		$config['file_name']            = $this->produk_id;
 		$config['overwrite']			= true;
-		$config['max_size']             = 4096; // 1MB
+		$config['max_size']             = 1024; // 1MB
 		// $config['max_width']            = 1024;
 		// $config['max_height']           = 768;
 

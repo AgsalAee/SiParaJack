@@ -28,8 +28,9 @@ $this->load->view('admin/templates/v_sidebar');
                 <center><?php echo $this->session->flashdata('msg'); ?></center>
                 <div class="panel-heading">
 
-                    <div class="btn btn-sm btn-primary" data-toggle="modal" data-target="#largeModal"><span class="fa fa-plus"></span> Tambah Produk Baju</a></div>
+                    <div class="btn btn-sm btn-success" data-toggle="modal" data-target="#largeModal"><span class="fa fa-plus"></span> Tambah Produk Baju</a></div>
 
+                    <span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span>
                 </div>
                 <div class="panel-body">
                     <div class="canvas-wrapper">
@@ -72,7 +73,7 @@ $this->load->view('admin/templates/v_sidebar');
                                             <td style="text-align:center;"><?php echo $stok; ?></td>
 
                                             <td style="text-align:center;">
-                                                <a class="btn btn-xs btn-primary" href="#modalEditPelanggan<?php echo $id ?>" data-toggle="modal" title="Edit">Edit</a>
+                                                <a class="btn btn-xs btn-warning" href="#modalEditPelanggan<?php echo $id ?>" data-toggle="modal" title="Edit">Edit</a>
                                                 <a class="btn btn-xs btn-danger" href="#modalHapusPelanggan<?php echo $id ?>" data-toggle="modal" title="Hapus">Hapus</a>
                                             </td>
                                         </tr>
@@ -113,15 +114,6 @@ $this->load->view('admin/templates/v_sidebar');
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-xs-3">Kategori</label>
-                            <div class="col-xs-9">
-                                <select class="form-control" name="kategori">
-                                    <option>Jaket</option>
-                                    <option>T-shirt</option>
-                                    <option>Almamater</option>
-                                </select></div>
-                        </div>
-                        <div class="form-group">
                             <label class="control-label col-xs-3">Deskripsi Produk</label>
                             <div class="col-xs-9">
                                 <input name="deskripsi" class="form-control" type="text" placeholder="Input Deskripsi Produk.." style="width:280px;" required>
@@ -135,17 +127,17 @@ $this->load->view('admin/templates/v_sidebar');
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label class="control-label col-xs-3">Stok</label>
-                            <div class="col-xs-9">
-                                <input name="stok" class="form-control" type="text" placeholder="Input stok..." style="width:280px;" readonly>
-                            </div>
+                        <!--<div class="form-group">
+                        <label class="control-label col-xs-3" >Stok</label>
+                        <div class="col-xs-9">
+                            <input name="stok" class="form-control" type="text" placeholder="Input stok..." style="width:280px;" readonly>
                         </div>
+                    </div>-->
 
                         <div class="form-group">
                             <label class="control-label col-xs-3">Gambar Produk</label>
                             <div class="col-xs-9">
-                                <input type="file" name="gambar" class="form-control" placeholder="" style="width:280px;">
+                                <input type="file" name="gambar" class="form-control" placeholder="Input stok..." style="width:280px;">
                             </div>
                         </div>
 
