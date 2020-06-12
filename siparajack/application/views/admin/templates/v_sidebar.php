@@ -61,7 +61,7 @@
 							</a></li>
 					</ul>
 				</li>
-				<li><a href="<?php echo base_url() . 'admin/pembeliankain' ?>"><em class="fa fa-shopping-cart">&nbsp;</em> Pembelian Bahan</a></li>
+				<!-- <li><a href="<?php echo base_url() . 'admin/pembeliankain' ?>"><em class="fa fa-shopping-cart">&nbsp;</em> Pembelian Bahan</a></li> -->
 				<!-- <li><a href="<?php echo base_url() . 'admin/penggunaanbahan' ?>"><em class="fa fa-hourglass-1">&nbsp;</em> Penggunaan Bahan</a></li> -->
 				<li><a href="<?php echo base_url() . 'admin/PemesananMasuk' ?>"><em class="fa fa-hourglass-1">&nbsp;</em> Pemesanan Masuk</a></li>
 				<li><a href="<?php echo base_url() . 'admin/hasil' ?>"><em class="fa fa-leaf">&nbsp;</em> Hasil Produksi</a></li>
