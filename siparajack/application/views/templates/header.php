@@ -46,15 +46,14 @@ ini_set('display_errors', 0);
                 <a href="#">Menu <span class="fa fa-angle-down" aria-hidden="true"></span></a>
                 <input type="checkbox" id="drop-2" />
                 <ul>
-                    <li><a href="<?php echo base_url() ?>v_Pembelian">Pembelian</a>
+                    <li><a href="<?php echo base_url() ?>Pembelian">Pembelian</a>
                     </li>
                     <li><a href="<?php echo base_url() ?>Pemesanan">Pemesanan</a>
                     </li>
-                    <li><a href="<?php echo base_url() ?>Gallery">Gallery</a>
-                    </li>
                 </ul>
             </li>
-
+            <li class="mr-lg-4 mr-3">
+                <a href="<?php echo base_url() ?>Gallery">Gallery</a></li>
             <li class="mr-lg-4 mr-3">
                 <a href="<?php echo base_url() ?>Contact">Contact</a></li>
             <?php

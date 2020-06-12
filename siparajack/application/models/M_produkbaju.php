@@ -7,7 +7,10 @@ class M_produkbaju extends CI_Model
 
 	public $produk_id;
 
-
+	function get_produkbajuUser()
+	{
+		return $this->db->get('t_produkbaju');
+	}
 	function get_produkbaju()
 	{
 		$hsl = $this->db->query("SELECT * FROM t_produkbaju");

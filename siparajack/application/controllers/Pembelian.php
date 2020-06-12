@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Pemesanan extends CI_Controller
+class Pembelian extends CI_Controller
 {
 
     /**
@@ -29,59 +29,18 @@ class Pemesanan extends CI_Controller
             $url = 'administrator';
             redirect($url);
         };
-        $this->load->model('M_produkbaju');
+        $this->load->model('m_produkbaju');
     }
 
     public function index()
     {
         if ($this->session->userdata('akses') == '3') {
             $this->load->view('templates/header');
-            $this->load->view('v_Pembelian');
+            $data['data'] = $this->m_produkbaju->get_produkbajuUser()->result();
+            $this->load->view('v_pembelian', $data);
             $this->load->view('templates/footer');
         } else {
             echo "halaman tidak ada";
         }
     }
-
-    function Get_AllPembelian()
-    {
-    }
-
-    // public function tambah_pesanan()
-    // {
-
-    //     // if ($this->form_validation->run() == FALSE) {
-    //     //     $this->index();
-    //     // } else {
-    //     if ($this->session->userdata('akses') == '3') {
-    //         $nama = $this->input->POST('nama');
-    //         $no_telp = $this->input->POST('no_telp');
-    //         $alamat = $this->input->POST('alamat');
-    //         $produk = $this->input->POST('produk');
-    //         $kep_produk = $this->input->POST('kep_produk');
-    //         $ukuran = $this->input->POST('ukuran');
-    //         $jumlah = $this->input->POST('jumlah');
-    //         $gambar = $this->input->POST('gambar');
-    //         $pesan = $this->input->POST('pesan');
-    //         //konfigurasi untuk gambar
-    //         $gambar = $_FILES['gambar']['name'];
-    //         if ($gambar = '') {
-    //         } else {
-    //             $config['upload_path'] = './assets/upload';
-    //             $config['allowed_types'] = 'jpg|jpeg|png|gif';
-
-    //             $this->load->library('upload', $config);
-    //             if (!$this->upload->do_upload('gambar')) {
-    //                 echo "Gambar Gagal Diupload! (Format Gambar:jpg/jpeg/png/gif)";
-    //             } else {
-    //                 $gambar = $this->upload->data('file_name');
-    //             }
-    //         }
-
-    //         $this->M_pemesananMasuk->tambah_pesanan($nama, $no_telp, $alamat, $produk, $kep_produk, $ukuran, $jumlah, $gambar, $pesan);
-    //         echo $this->session->set_flashdata('msg', '<label class="label label-success">Pesanan Berhasil ditambahkan</label>');
-    //         redirect('Home');
-    //     }
-    // }
-
 }
