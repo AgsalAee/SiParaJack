@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 12 Jun 2020 pada 07.04
+-- Waktu pembuatan: 21 Bulan Mei 2020 pada 14.09
 -- Versi server: 8.0.18
 -- Versi PHP: 7.3.11
 
@@ -30,24 +30,16 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `pemesanan` (
   `id_pemesanan` int(11) NOT NULL,
-  `nama` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `no_telp` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `alamat` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `produk` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `kep_produk` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `ukuran` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `nama` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `no_telp` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `alamat` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `produk` varchar(10) COLLATE utf8mb4_general_ci NOT NULL,
+  `kep_produk` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `ukuran` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   `jumlah` int(50) NOT NULL,
-  `gambar` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `pesan` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
+  `gambar` text COLLATE utf8mb4_general_ci NOT NULL,
+  `pesan` varchar(50) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data untuk tabel `pemesanan`
---
-
-INSERT INTO `pemesanan` (`id_pemesanan`, `nama`, `no_telp`, `alamat`, `produk`, `kep_produk`, `ukuran`, `jumlah`, `gambar`, `pesan`) VALUES
-(1, 'Livia', '082228773286', 'Jl Piranha', '2', 'Pribadi', 'M', 2, 'jaket.jpg', 'Warna sesuai desain'),
-(2, 'Agsal', '082228773281', 'Dinoyo', '1', 'Pribadi', 'M', 2, 'tshirt.jpg', 'Warna sesuai desain');
 
 -- --------------------------------------------------------
 
@@ -516,7 +508,7 @@ ALTER TABLE `t_user`
 -- AUTO_INCREMENT untuk tabel `pemesanan`
 --
 ALTER TABLE `pemesanan`
-  MODIFY `id_pemesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_pemesanan` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `t_belikain_detail`
